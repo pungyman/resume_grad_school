@@ -17,9 +17,9 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.375in}
-\addtolength{\evensidemargin}{-0.375in}
-\addtolength{\textwidth}{1in}
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.25in}
 \addtolength{\topmargin}{-.5in}
 \addtolength{\textheight}{1.0in}
 
@@ -46,7 +46,6 @@
   \vspace{-1pt}\item
     \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
-      \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-5pt}
 }
 
@@ -56,129 +55,136 @@
 
 \newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=0.15in]}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
 
 %-------------------------------------------
 %%%%%%  CV STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 \begin{document}
+
 %----------HEADING-----------------
-\vspace*{-40pt}
+\vspace*{-44pt}
 \begin{center}
   \textbf{\LARGE Shaanil Punglia}\\[4pt]
   \href{mailto:shaanil.punglia@icloud.com}{shaanil.punglia@icloud.com} $|$ +91-90220 65354
 \end{center}
+\vspace{-20pt}
+
 %-----------EDUCATION-----------------
 \section{Education}
   \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
     \textbf{Birla Institute of Technology and Science} & Goa, India \\
-    \textit{\small Bachelor of Engineering in Electronics \& Instrumentation; GPA: 7.6/10 (First Division)} & \textit{\small Aug. 2020 -- July. 2024} \\
+    \textit{\small Bachelor of Engineering in Electronics \& Instrumentation $\cdot$ GPA: 7.6/10 (First Division)} & \textit{\small Aug 2020 -- July 2024} \\ \\
   \end{tabular*}
+  \vspace{-20pt}
+
 %--------TECHNICAL SKILLS------------
 \section{Technical Skills}
-  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{Languages}{: Python, R, SQL, Bash, Java, C++} & \textbf{Technologies}{: AWS, Git, Docker, MLFlow} \\
-    \textbf{ML/Data}{: PyTorch, XGBoost, Pandas, NumPy, Optuna} & \textbf{Databases}{: PostgreSQL, MongoDB, MySQL} \\
-  \end{tabular*}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, R, SQL, Bash, Java, C++} $|$ \textbf{Technologies}{: AWS, Docker, FastAPI, Databricks, PySpark, MLflow} \\
+     \textbf{ML/Data}{: PyTorch, HuggingFace, Scikit-learn, Pandas, NumPy, Optuna} $|$ \textbf{Databases}{: PostgreSQL, Redshift, MongoDB} \\
+    }}
+  \resumeSubHeadingListEnd
+  \vspace{-12pt}
+
 %-----------RESEARCH AND PUBLICATIONS-----------------
 \section{Research and Publications}
-  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-    \textbf{Hybrid Deep Learning for Winter Wheat Yield Prediction Using Multi-Source Data} & May 2025 \\
-    \textit{\small Under review at EAAI (Elsevier, Q1) $|$ Advisor: Prof. Manogna R.L., BITS Pilani} & \\
-  \end{tabular*}\vspace{-5pt}
-  \resumeItemListStart
-    \resumeItem{}
-      {Built a hybrid CNN-BiLSTM in PyTorch for district-level wheat yield prediction, fusing multi-modal data (MODIS imagery, NASA POWER meteorology, ISRIC soil) to achieve 80\% R\textsuperscript{2} across 275 districts and 23 years of data.}
-    \resumeItem{}
-      {Outperformed Random Forest by 44\% and LSTM by 10\% via Bayesian HPO (5,000+ Optuna trials); attention mechanisms identified critical growth periods, enabling one-month advance forecasts for policy interventions.}
-  \resumeItemListEnd
+  \resumeSubHeadingListStart
+    \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{\small Hybrid Deep Learning for Winter Wheat Yield Prediction} & \\
+        \textit{\small Under review at EAAI (Elsevier, Q1) $\cdot$ Advisor: Prof. Manogna R.L., BITS Pilani} & \textit{\small Submitted 2025} \\
+    \end{tabular*}\vspace{-5pt}
+      \resumeItemListStart
+        \resumeItem{}
+          {Developed a CNN-BiLSTM architecture with self-attention that achieved 81\% R\textsuperscript{2} for wheat yield forecasting across India's Wheat Belt, processing NASA POWER climate data, ISRIC soil profiles, and MODIS-derived vegetation indices.}
+        \resumeItem{}
+          {Conducted extensive ablation studies across 8 model variants validating each architectural component's contribution, implemented in PyTorch with Optuna-based Bayesian optimization (5000+ trials) achieving MAE of 265 kg/ha, with temporal attention weight analysis identifying November sowing as the critical predictive period.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  \vspace{-10pt}
+
 %-----------EXPERIENCE-----------------
 \section{Experience}
   \resumeSubHeadingListStart
 
     \resumeSubheading
-      {Motilal Oswal Financial Services}{Mumbai, India}
-      {Machine Learning Engineer, AI \& DS}{Sep 2024 -- Present}
+      {\small Motilal Oswal Financial Services, \textmd{Machine Learning Engineer}}{\small \textit{Mumbai, India} $\cdot$ \textit{Sep 2024 -- Present}}
+      {}{}
       \resumeItemListStart
-        \resumeItem{Lip Sync Model}
-          {Architected changes to the U-Net of an audio conditioned latent diffusion model for lip syncing, and trained on Indic language data, increasing the sync confidence score by 2x.}
-        \resumeItem{Text-to-Video Pipeline}
-          {Deployed a scalable text-to-video generation pipeline on AWS, successfully integrating TTS, gesture generation, and lip-sync models for a high-visibility digital twin project.}
-%        \resumeItem{Data Pipeline Refactor}
-%          {Spearheaded a critical refactor of the data processing and backtesting suite for portfolio optimization, improving pipeline reliability and uncovering systemic data quality gaps.}
         \resumeItem{t-GNN for Stock Prediction}
-          {Architected a temporal Graph Neural Network (t-GNN) in PyTorch Geometric to model the NIFTY 500 index, achieving 67\% precision in predicting downward price movement and outperforming LSTM/XGBoost baselines.}
+          {Developed a temporal Graph Neural Network (GRU-GNN) in PyTorch Geometric to model the NIFTY 500 index, achieving 67\% precision in predicting downward price movement, outperforming LSTM/XGBoost baselines.}
         \resumeItem{Multi-modal Forecasting}
-          {Engineered a multi-modal forecasting model by integrating FinBERT-processed news features into an LSTM, improving weekly trend classification accuracy by 8\%.}
-%        \resumeItem{Feature Engineering Pipeline}
-%          {Architected a modular feature engineering pipeline with Optuna integration, reducing hyperparameter optimization (HPO) runtime for sequential models by 5x to enable more rigorous search space exploration.}
+          {Developed multi-modal stock trend forecasting model integrating FinBERT-processed sentiment features with LSTM temporal modeling, achieving 8\% accuracy improvement over baseline LSTM for weekly trend classification of NIFTY500.}
+        \resumeItem{Lip Sync Model}
+          {Architected cross-attention mechanism in U-Net decoder of audio-conditioned latent diffusion model to integrate reference frame guidance, fine-tuning on Indic language speech-video pairs to achieve 2x improvement in lip-sync confidence scores.}
+        \resumeItem{Text-to-Video Pipeline}
+          {Deployed scalable text-to-video generation pipeline on AWS integrating TTS, gesture synthesis, and lip-syncing.}
       \resumeItemListEnd
 
     \resumeSubheading
-      {UBS}{Mumbai, India}
-      {Quant Risk Analyst Intern, Quant Risk Methodology}{Jan 2024 -- July 2024}
+      {\small UBS, \textmd{Quant Risk Analyst Intern}}{\small \textit{Mumbai, India} $\cdot$ \textit{Jan 2024 -- July 2024}}
+      {}{}
       \resumeItemListStart
         \resumeItem{Credit Risk Model Recalibration}
-          {Recalibrated two production-level corporate credit risk models (Recovery Ratios, CDS-Implied Rating) in R to account for the systemic impact of the Credit Suisse merger, navigating direct feedback from the Model Risk Management (MRMC) team.}
+          {Refined corporate credit risk models (Recovery Ratios, CDS-Implied Rating) in R by integrating systemic volatility factors from the Credit Suisse merger, re-estimating key parameters to safeguard the valuation of a \$450B+ credit book.}
         \resumeItem{Model Validation \& Analysis}
-          {Conducted and presented a detailed comparative analysis of the recalibrated SIR model's behavior versus agency ratings, documenting all statistical tests to justify the changes and quantify their impact on stakeholders.}
+          {Substantiated proposed model updates through rigorous statistical back-testing, proving full compliance with Basel III capital frameworks and securing implementation approval from Model Risk Management (MRMC).}
+          
       \resumeItemListEnd
 
     \resumeSubheading
-      {Securities and Exchange Board of India (SEBI)}{Mumbai, India}
-      {Summer Intern, Market Regulation Department}{May 2023 -- July 2023}
+      {\small Income Tax Department, Govt. of India, \textmd{Data Analyst Intern}}{\small \textit{Remote} $\cdot$ \textit{Aug 2023 -- Dec 2023}}
+      {}{}
       \resumeItemListStart
-        \resumeItem{Audit Framework}
-          {Developed a systematic, data-driven audit framework in Python/Pandas to validate core market-structure policies for India's top exchanges (NSE/BSE), replacing error-prone manual spot-checks.}
+        \resumeItem{Transfer Pricing Surveillance System}
+          {Built an automated transfer pricing compliance system using Python to process inter-company transactions, implementing z-score and IQR-based anomaly detection algorithms on corporate filings and industry benchmark data.}
+        \resumeItem{Interactive Dashboard}
+          {Developed interactive Plotly Dash dashboard with drill-down capabilities to visualize flagged BEPS patterns, enabling tax officials to prioritize high-risk cross-border transactions and identify profit-shifting to low-tax jurisdictions.}
+      \resumeItemListEnd
+    \resumeSubheading
+      {\small Securities and Exchange Board of India, \textmd{Market Regulation Intern}}{\small \textit{Mumbai, India} $\cdot$ \textit{Summer 2023}}
+      {}{}
+      \resumeItemListStart
         \resumeItem{Policy Automation}
-          {Translated complex SEBI policy directives for HFT colocation and illiquid auctions into executable Python logic, reconstructing exchange data protocols to identify compliance gaps previously missed by manual validation.}
+          {Contributed to ETL pipeline integrating IBM DB2 warehouse with National Stock Exchange feeds for compliance monitoring of 70M+ daily transactions, and developed automated data validation scripts to flag inconsistencies in HFT colocation arrangements and call-auctions for illiquid scrips, previously reliant on manual spot-checks.}
+        
       \resumeItemListEnd
 
     \resumeSubheading
-      {PSBLoansin59minutes}{Remote}
-      {Machine Learning Intern}{Jan 2023 -- April 2023}
+      {\small PSBLoansin59minutes, \textmd{Data Science Intern}}{\small \textit{Remote} $\cdot$ \textit{Jan 2023 -- April 2023}}
+      {}{}
       \resumeItemListStart
         \resumeItem{Credit Scoring Model}
-          {Developed an ML credit scoring model using XGBoost to assess MSME loan eligibility, analyzing GST returns, ITR data, and 6-month bank statements to automate initial underwriting decisions across 21+ lending partners.}
+          {Developed an ML credit scoring model using XGBoost to assess MSME loan eligibility, analyzing tax returns (GST, ITR) and 6-month bank statements to automate initial underwriting decisions across 21+ lending partners.}
         \resumeItem{API Integration}
-          {Built RESTful APIs using FastAPI to integrate ML predictions with the loan origination system, connecting PostgreSQL (transactional data) and MongoDB (document storage for GST/ITR XML files), enabling real-time loan decisioning for 700+ daily applications.}
+          {Built RESTful APIs using FastAPI to integrate ML predictions with the loan origination system, connecting PostgreSQL (transactional data) and MongoDB (GST/ITR XML files), enabling real-time loan decisioning for 700+ daily applications.}
       \resumeItemListEnd
 
-%    \resumeSubheading
-%      {Income Tax Department}{India}
-%      {Transfer Pricing Surveillance System}{}
-%      \resumeItemListStart
-%        \resumeItem{Compliance System}
-%          {Engineered an automated transfer pricing compliance system using Python (Pandas, NumPy) and Plotly/Dash, processing 15,000+ inter-company transactions monthly to detect base erosion and profit shifting (BEPS) through statistical price deviation analysis against market benchmarks.}
-%        \resumeItem{ETL \& Anomaly Detection}
-%          {Built ETL pipelines to integrate multi-source datasets from corporate filings and industry price journals, implementing z-score and IQR-based anomaly detection algorithms, reducing manual review time by 60\%.}
-%        \resumeItem{Interactive Dashboard}
-%          {Developed an interactive Plotly Dash dashboard with drill-down capabilities to visualize flagged cross-border transactions, enabling tax officials to prioritize high-risk cases and identify patterns across 500+ entities engaging in potential profit-shifting to low-tax jurisdictions.}
-%      \resumeItemListEnd
+    
 
-%    \resumeSubheading
-%      {State Council of Education Research and Training, Kerala}{Remote}
-%      {Practice School Internship}{May 2022 -- July 2022}
-%      \resumeItemListStart
-%        \resumeItem{Digital Archiving System}
-%          {Designed a digital archiving system for 15+ years of curriculum records, migrating 8,000+ documents to a MySQL database with Python-based OCR and metadata tagging for faster policy research.}
-%      \resumeItemListEnd
+    \resumeSubheading
+      {\small State Council of Education Research and Training, Kerala, \textmd{Practice School Intern}}{\small \textit{Remote} $\cdot$ \textit{Summer 2022}}
+      {}{}
+      \resumeItemListStart
+        \resumeItem{Digital Archiving System}
+          {Designed automated document management system using Tesseract OCR to digitize and migrate 8,000+ curriculum documents spanning 15 years into MySQL database with full-text indexing and metadata extraction, reducing policy research document retrieval from manual file searches (avg. 2 hours) to sub-second SQL queries.}
+      \resumeItemListEnd
 
   \resumeSubHeadingListEnd
+  \vspace{-10pt}
 
 
-%%-----------PROJECTS-----------------
-%\section{LEADERSHIP AND ACTIVITIES}
-%  \resumeSubHeadingListStart
-%    \resumeSubItem{QuantSoftware Toolkit}
-%      {Open source python library for financial data analysis and machine learning for finance.}
-%    \resumeSubItem{Github Visualization}
-%      {Data Visualization of Git Log data using D3 to analyze project trends over time.}
-%    \resumeSubItem{Recommendation System}
-%      {Music and Movie recommender systems using collaborative filtering on public datasets.}
-%     \resumeSubItem{Mac Setup}
-%       {Book that gives step by step instructions on setting up developer environment on Mac OS.}
-%  \resumeSubHeadingListEnd
+%-----------PROJECTS-----------------
+\section{Leadership and Activities}
+  \resumeSubHeadingListStart
+    \resumeSubItem{Co-founder \& Lead, Caboodle (Academic Platform)}
+      {Founded and led 5-member team building Caboodle, an integrated academic platform adopted by 83\% of BITS Pilani Goa's 2020 cohort, consolidating study resources and collaborative tools to maintain peer-learning culture during the pandemic.}
+    \resumeSubItem{Fundraising Lead, ISKCON Ahmedabad}
+      {Led fundraising campaign for ISKCON cow shelter, coordinating volunteer teams and digital outreach initiatives to raise \$70K USD through individual donations, supporting welfare operations for 400+ rescued cattle.}
+  \resumeSubHeadingListEnd
 
 %
 
